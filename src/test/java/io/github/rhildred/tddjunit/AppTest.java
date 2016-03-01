@@ -1,5 +1,6 @@
 package io.github.rhildred.tddjunit;
 
+import java.math.*;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -37,8 +38,69 @@ public class AppTest
     }
     public void testHSTCalculateON()
     {
-        float nStartAmount = 10;
-        assertTrue(HSTCalculate.calculate(nStartAmount, "ON") == 11.3);
+        BigDecimal nStartAmount = BigDecimal.valueOf(10);
+        assertTrue(HSTCalculate.calculate(nStartAmount, "ON").compareTo(new BigDecimal("11.3")) == 0);
 
     }
+    public void testHSTCalculateBC()
+    {
+        BigDecimal nStartAmount = BigDecimal.valueOf(10);
+        assertTrue(HSTCalculate.calculate(nStartAmount, "BC").compareTo(new BigDecimal("11.2")) == 0);
+
+    }
+    public void testHSTCalculateAB()
+    {
+        BigDecimal nStartAmount = BigDecimal.valueOf(10);
+        assertTrue(HSTCalculate.calculate(nStartAmount, "AB").compareTo(new BigDecimal("10.5")) == 0);
+
+    }
+    public void testHSTCalculateNB()
+    {
+        BigDecimal nStartAmount = BigDecimal.valueOf(10);
+        assertTrue(HSTCalculate.calculate(nStartAmount, "NB").compareTo(new BigDecimal("11.3")) == 0);
+
+    }
+    public void testHSTCalculateMB()
+    {
+        BigDecimal nStartAmount = BigDecimal.valueOf(10);
+        assertTrue(HSTCalculate.calculate(nStartAmount, "MB").compareTo(new BigDecimal("11.3")) == 0);
+
+    }
+    public void testHSTCalculateNL()
+    {
+        BigDecimal nStartAmount = BigDecimal.valueOf(10);
+        assertTrue(HSTCalculate.calculate(nStartAmount, "NL").compareTo(new BigDecimal("11.3")) == 0);
+
+    }
+    public void testHSTCalculateNT()
+    {
+        BigDecimal nStartAmount = BigDecimal.valueOf(10);
+        assertTrue(HSTCalculate.calculate(nStartAmount, "NT").compareTo(new BigDecimal("10.5")) == 0);
+
+    }
+    public void testHSTCalculateNS()
+    {
+        BigDecimal nStartAmount = BigDecimal.valueOf(10);
+        assertTrue(HSTCalculate.calculate(nStartAmount, "NS").compareTo(new BigDecimal("11.5")) == 0);
+
+    }
+    public void testHSTCalculateNU()
+    {
+        BigDecimal nStartAmount = BigDecimal.valueOf(10);
+        assertTrue(HSTCalculate.calculate(nStartAmount, "NU").compareTo(new BigDecimal("10.5")) == 0);
+
+    }
+    public void testHSTCalculatePE()
+    {
+        BigDecimal nStartAmount = BigDecimal.valueOf(10);
+        assertTrue(HSTCalculate.calculate(nStartAmount, "PE").compareTo(new BigDecimal("11.4")) == 0);
+
+    }
+    public void testHSTCalculateQC()
+    {
+        BigDecimal nStartAmount = BigDecimal.valueOf(10);
+        assertTrue(HSTCalculate.calculate(nStartAmount, "QC").compareTo(new BigDecimal("11.4975")) == 0);
+
+    }
+
 }
