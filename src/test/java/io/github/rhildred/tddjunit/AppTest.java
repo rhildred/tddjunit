@@ -36,6 +36,11 @@ public class AppTest
     {
         assertTrue( true );
     }
+    public void testNew()
+    {
+        assertTrue( null != new HSTCalculate() );
+    }
+
     public void testHSTCalculateON()
     {
         BigDecimal nStartAmount = BigDecimal.valueOf(10);
@@ -100,6 +105,12 @@ public class AppTest
     {
         BigDecimal nStartAmount = BigDecimal.valueOf(10);
         assertTrue(HSTCalculate.calculate(nStartAmount, "QC").compareTo(new BigDecimal("11.4975")) == 0);
+
+    }
+    public void testHSTCalculateNoProvince()
+    {
+        BigDecimal nStartAmount = BigDecimal.valueOf(10);
+        assertTrue(HSTCalculate.calculate(nStartAmount, "").compareTo(new BigDecimal("20")) == 0);
 
     }
 
