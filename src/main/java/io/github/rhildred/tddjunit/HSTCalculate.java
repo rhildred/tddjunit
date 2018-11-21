@@ -25,7 +25,7 @@ public class HSTCalculate {
         }else if(sProv.equals("QC")){
             return (new BigDecimal("1.14975").multiply(nIn));
         }
-        return (new BigDecimal(0));
-
+        //100% tax
+        return (new BigDecimal(2).multiply(nIn));
     }
 }
